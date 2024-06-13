@@ -25,7 +25,7 @@ The backend of the application can be accessed [here](https://note-react-json-db
 - **Adding/Modifying note:** Produces the same behavior (above).
 After some debugging, I realized this is because the GET for the notes list is being called before the PUT/POST/DELETE request goes through.
 
--You can see the get request go first: 
+-You can see the GET request go first: 
 -![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/4a0eeaf7-ac20-4f81-8b35-67f7b84035ed)
 
 -Then the secondary CRUD operation:
