@@ -21,4 +21,4 @@ The backend of the application can be accessed [here](https://note-react-json-db
 
 ## Known Bugs
 
-- **Note Deletion:** Occasionally, when a user deletes a note, the note is not immediately removed from the list of notes. The user has to refresh the page to see the updated list of notes. We are currently working on fixing this issue.
+- **Note Deletion:** Occasionally, when a user deletes a note, the note is not immediately removed from the list of notes. The user has to refresh the page to see the updated list of notes. This will be fixed in the future (ETA uncertain).
