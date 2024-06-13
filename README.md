@@ -31,5 +31,3 @@ After some debugging, I realized this is because the GET for the notes list is b
 -Then the secondary CRUD operation:
 -![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/575190d3-f6ae-4d6a-9bad-abe4f633cedb)
 
--To fix this I could call the updateNote method using await within the getNote function to make sure the update completes first: 
-![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/14f757bb-b1d5-46e4-84ef-00e4787f4bed)
