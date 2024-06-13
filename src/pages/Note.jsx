@@ -15,7 +15,7 @@ const Note = () => {
       setNote({ body: "" })
       return
     }
-    let response = await fetch(`http://localhost:5000/notes/${id}`)
+    let response = await fetch(`https://note-react-json-db-995df07f909e.herokuapp.com/notes/${id}`)
     let data = await response.json()
     setNote(data)
   }, [id])
@@ -26,7 +26,7 @@ const Note = () => {
   }, [id, getNote])
 
   const createNote = async () => {
-    await fetch(`http://localhost:5000/notes`, {
+    await fetch(`https://note-react-json-db-995df07f909e.herokuapp.com/notes`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const Note = () => {
   }
 
   let updateNote = async () => {
-    await fetch(`http://localhost:5000/notes/${id}`, {
+    await fetch(`https://note-react-json-db-995df07f909e.herokuapp.com/notes/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const Note = () => {
   }
 
   let deleteNote = async () => {
-    await fetch(`http://localhost:5000/notes/${id}`, {
+    await fetch(`https://note-react-json-db-995df07f909e.herokuapp.com/notes/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

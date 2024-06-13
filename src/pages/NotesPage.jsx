@@ -11,7 +11,7 @@ const NotesPage = () => {
   }, [])
 
   let getNotes = async () => {
-    let response = await fetch("http://localhost:5000/notes/")
+    let response = await fetch("https://note-react-json-db-995df07f909e.herokuapp.com/notes")
     let data = await response.json()
 
     setNotes(data)
