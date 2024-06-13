@@ -26,9 +26,10 @@ The backend of the application can be accessed [here](https://note-react-json-db
 -After some debugging I realized this is due to the fact that the GET for the notes list is being called before the PUT/POST/DELETE request goes through.
 
 -You can see the get request go first: 
-![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/4a0eeaf7-ac20-4f81-8b35-67f7b84035ed)
-Then the secondary CRUD operation:
-![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/575190d3-f6ae-4d6a-9bad-abe4f633cedb)
+-![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/4a0eeaf7-ac20-4f81-8b35-67f7b84035ed)
+
+-Then the secondary CRUD operation:
+-![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/575190d3-f6ae-4d6a-9bad-abe4f633cedb)
 
 -To fix this I could call the updateNote method within the getNote function with async: 
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/14f757bb-b1d5-46e4-84ef-00e4787f4bed)
