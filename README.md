@@ -21,4 +21,13 @@ The backend of the application can be accessed [here](https://note-react-json-db
 
 ## Known Bugs
 
-- **Note Deletion:** Occasionally, when a user deletes a note, the note is not immediately removed from the list of notes. The user has to refresh the page to see the updated list of notes. This will be fixed in the future (ETA uncertain).
+- **Note Deletion:** Occasionally, when a user deletes a note, the note is not immediately removed from the list of notes. The user has to refresh the page to see the updated list of notes.
+-After some debugging I realized this is due to the fact that the GET for the notes list is being called before the PUT request goes through.
+
+![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/4a0eeaf7-ac20-4f81-8b35-67f7b84035ed)
+
+![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/575190d3-f6ae-4d6a-9bad-abe4f633cedb)
+
+
+
+![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/14f757bb-b1d5-46e4-84ef-00e4787f4bed)
