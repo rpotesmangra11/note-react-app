@@ -18,13 +18,16 @@ The backend of the application hosted on Heroku can be accessed [here](https://n
 ## Project Outline: Automated Testing with Jenkins
 1. **Jenkins Setup:** As part of my continuous integration/continuous delivery (CI/CD) pipeline, I have set up Jenkins, a powerful automation tool. My Jenkins setup includes jobs specifically configured to run test cases.
 
-2. **Triggering Jenkins Job:** I have leveraged Jenkins' ability to trigger jobs through webhooks. These are HTTP callbacks that send a GET or POST request to a configured URL when a specific event occurs. In my case, this event triggers a Jenkins job.
+3. **Triggering Jenkins Job:** I have leveraged Jenkins' ability to trigger jobs through webhooks. These are HTTP callbacks that send a GET or POST request to a configured URL when a specific event occurs. In my case, this event triggers a Jenkins job. I trigger this using a simple curl command: curl -v -X POST http://localhost:8080/job/just-do-it-note-ci-cd/build --user admin:id
 
-3. **Running Test Cases:** Upon receiving the GET request, Jenkins triggers the job I have configured to run my test cases. This job could be a simple script that runs the tests, or a more complex pipeline with several stages, depending on the needs.
+4. **Running Test Cases:** Upon receiving the GET request, Jenkins triggers the job I have configured to run my test cases. This job could be a simple script that runs the tests, or a more complex pipeline with several stages, depending on the needs.
+![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/927c6c7d-23f9-4d1c-a7f9-350da6a0ec93)
+![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/25be3073-c531-4798-9576-7ea9b3f4e06f)
+![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/ba7200e2-e948-47b7-a3cd-73b7f8b78281)
 
-4. **Reporting:** After the tests have been run, Jenkins generates a report based on the results. This report includes crucial information such as the number of tests passed/failed, code coverage, and more. I utilize various Jenkins reporting plugins to present these test results in different formats.
+5. **Reporting:** After the tests have been run, Jenkins generates a report based on the results. This report includes crucial information such as the number of tests passed/failed, code coverage, and more. I utilize various Jenkins reporting plugins to present these test results in different formats.
 
-5. **Notification:** I have also configured Jenkins to send notifications based on the result of the job. For instance, if a test fails, Jenkins sends an email to me or posts a message to my Slack channel, ensuring immediate attention and action.
+6. **Notification:** I have also configured Jenkins to send notifications based on the result of the job. For instance, if a test fails, Jenkins sends an email to me or posts a message to my Slack channel, ensuring immediate attention and action.
 ## Features
 
 - **Create Note:** Users can create a new note by clicking on the 'Create Note' button. The note will be saved and displayed in the list of notes.
