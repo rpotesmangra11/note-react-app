@@ -1,7 +1,7 @@
 
 # Note App
 
-This is a note-taking application built with React.
+This is a note-taking application built with React with the end goal to set up a whole test automation CI/CD pipeline.
 
 ## Frontend
 
