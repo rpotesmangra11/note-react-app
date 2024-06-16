@@ -17,16 +17,15 @@ The backend of the application hosted on Heroku can be accessed [here](https://n
 
 ## Automation Pipeline Workflow
 Project Outline: Automated Testing with Jenkins
-1. Jenkins Setup: As part of our continuous integration/continuous delivery (CI/CD) pipeline, we have set up Jenkins, a powerful automation tool. Our Jenkins setup includes jobs specifically configured to run our test cases.
+1. **Jenkins Setup:** As part of my continuous integration/continuous delivery (CI/CD) pipeline, I have set up Jenkins, a powerful automation tool. My Jenkins setup includes jobs specifically configured to run test cases.
 
-2. Triggering Jenkins Job: We have leveraged Jenkins' ability to trigger jobs through webhooks. These are HTTP callbacks that send a GET or POST request to a configured URL when a specific event occurs. In our case, this event triggers our Jenkins job.
+2. **Triggering Jenkins Job:** I have leveraged Jenkins' ability to trigger jobs through webhooks. These are HTTP callbacks that send a GET or POST request to a configured URL when a specific event occurs. In my case, this event triggers a Jenkins job.
 
-3. Running Test Cases: Upon receiving the GET request, Jenkins triggers the job configured to run our test cases. This job could be a simple script that runs our tests, or a more complex pipeline with several stages, depending on our needs.
+3. **Running Test Cases:** Upon receiving the GET request, Jenkins triggers the job I have configured to run my test cases. This job could be a simple script that runs the tests, or a more complex pipeline with several stages, depending on the needs.
 
-4. Reporting: After the tests have been run, Jenkins generates a report based on the results. This report includes crucial information such as the number of tests passed/failed, code coverage, and more. We utilize various Jenkins reporting plugins to present these test results in different formats.
+4. **Reporting:** After the tests have been run, Jenkins generates a report based on the results. This report includes crucial information such as the number of tests passed/failed, code coverage, and more. I utilize various Jenkins reporting plugins to present these test results in different formats.
 
-5. Notification: We have also configured Jenkins to send notifications based on the result of the job. For instance, if a test fails, Jenkins sends an email to our team or posts a message to our Slack channel, ensuring immediate attention and action. 
-
+5. **Notification:** I have also configured Jenkins to send notifications based on the result of the job. For instance, if a test fails, Jenkins sends an email to me or posts a message to my Slack channel, ensuring immediate attention and action.
 ## Features
 
 - **Create Note:** Users can create a new note by clicking on the 'Create Note' button. The note will be saved and displayed in the list of notes.
