@@ -3,6 +3,10 @@
 
 This is a note-taking application built with React with the end goal to set up a whole test automation CI/CD pipeline.
 
+## Full Disclosure
+
+The first load of this Heroku app may be slow due to the dynos having a startup time. This occurs because Heroku's dynos enter a sleep mode after a period of inactivity to conserve resources. When the app is accessed again, the dynos need time to wake up, causing a delay in the initial response. This startup delay is commonly referred to as a "cold start" and is a normal behavior on Heroku to manage resource usage efficiently.
+
 ## Frontend
 
 The frontend of the application hosted on Heroku can be accessed [here](https://note-react-app-frontend-9297f33085da.herokuapp.com/).
