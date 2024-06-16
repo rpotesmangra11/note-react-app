@@ -26,9 +26,11 @@ The backend of the application hosted on Heroku can be accessed [here](https://n
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/ba7200e2-e948-47b7-a3cd-73b7f8b78281)
 
 This is my JenkinsFile that tells Jenkins what to do:
-pipeline {
-    agent { label 'windows' }
 
+
+    pipeline {
+    agent { label 'windows' }
+    
     stages {
         stage('Install') {
             steps {
