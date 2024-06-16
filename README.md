@@ -82,7 +82,7 @@ This is my JenkinsFile that tells Jenkins what to do:
             echo 'Build was successful!'
         }
     }
-}
+
 5. **Reporting:** After the tests have been run, Jenkins generates a report based on the results. This report includes crucial information such as the number of tests passed/failed, code coverage, and more. I utilize various Jenkins reporting plugins to present these test results in different formats.
 
 6. **Notification:** I have also configured Jenkins to send notifications based on the result of the job. For instance, if a test fails, Jenkins sends an email to me or posts a message to my Slack channel, ensuring immediate attention and action.
