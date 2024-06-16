@@ -20,11 +20,67 @@ The backend of the application hosted on Heroku can be accessed [here](https://n
 
 3. **Triggering Jenkins Job:** I have leveraged Jenkins' ability to trigger jobs through webhooks. These are HTTP callbacks that send a GET or POST request to a configured URL when a specific event occurs. In my case, this event triggers a Jenkins job. I trigger this using a simple curl command: curl -v -X POST http://localhost:8080/job/just-do-it-note-ci-cd/build --user admin:id
 
-4. **Running Test Cases:** Upon receiving the GET request, Jenkins triggers the job I have configured to run my test cases. This job could be a simple script that runs the tests, or a more complex pipeline with several stages, depending on the needs.
+4. **Running Test Cases:** Upon receiving the GET request, Jenkins triggers the job I have configured to run my test cases. This job could be a simple script that runs the tests, or a more complex pipeline with several stages, depending on the needs. In my case I have implemented (as of now) using a Jenkinsfile. This is read from my test case GitHub repo so Jenkins knows what to do. Here is an example run:
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/927c6c7d-23f9-4d1c-a7f9-350da6a0ec93)
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/25be3073-c531-4798-9576-7ea9b3f4e06f)
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/ba7200e2-e948-47b7-a3cd-73b7f8b78281)
 
+This is my JenkinsFile that tells Jenkins what to do:
+pipeline {
+    agent { label 'windows' }
+
+    stages {
+        stage('Install') {
+            steps {
+                echo 'Starting the Install stage...'
+                bat 'npm install'
+                echo 'Finished the Install stage.'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Starting the Test stage...'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    bat 'npm run note-tests'
+                }
+                echo 'Finished the Test stage.'
+            }
+        }
+
+        stage('Publish Reports') {
+            steps {
+                echo 'Starting the Publish Reports stage...'
+                publishHTML(target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'cypress/results',
+                    reportFiles: 'mochawesome.html',
+                    reportName: 'Mochawesome Report'
+                ])
+                echo 'Finished the Publish Reports stage.'
+            }
+        }
+        stage('Upload Report') {
+            steps {
+                echo 'Starting the Upload Report stage...'
+                git credentialsId: '995a8fdc-ed31-4a1c-949b-1b3f32a0b760', url: 'https://github.com/rpotesmangra11/just-do-it-note-test-cases.git'
+                bat 'git config user.email "potesmangrar11@gmail.com"'
+                bat 'git config user.name "rpotesmangra11"'
+                bat 'git add cypress/results/mochawesome.html'
+                bat 'git commit -m "Add test report"'
+                bat 'git push'
+                echo 'Finished the Upload Report stage.'
+            }
+        }
+    }
+    post {
+        success {
+            echo 'Build was successful!'
+        }
+    }
+}
 5. **Reporting:** After the tests have been run, Jenkins generates a report based on the results. This report includes crucial information such as the number of tests passed/failed, code coverage, and more. I utilize various Jenkins reporting plugins to present these test results in different formats.
 
 6. **Notification:** I have also configured Jenkins to send notifications based on the result of the job. For instance, if a test fails, Jenkins sends an email to me or posts a message to my Slack channel, ensuring immediate attention and action.
