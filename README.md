@@ -15,8 +15,7 @@ The frontend of the application hosted on Heroku can be accessed [here](https://
 
 The backend of the application hosted on Heroku can be accessed [here](https://note-react-json-db-995df07f909e.herokuapp.com/notes).
 
-## Automation Pipeline Workflow
-Project Outline: Automated Testing with Jenkins
+## Project Outline: Automated Testing with Jenkins
 1. **Jenkins Setup:** As part of my continuous integration/continuous delivery (CI/CD) pipeline, I have set up Jenkins, a powerful automation tool. My Jenkins setup includes jobs specifically configured to run test cases.
 
 2. **Triggering Jenkins Job:** I have leveraged Jenkins' ability to trigger jobs through webhooks. These are HTTP callbacks that send a GET or POST request to a configured URL when a specific event occurs. In my case, this event triggers a Jenkins job.
