@@ -88,14 +88,14 @@ This is my JenkinsFile that tells Jenkins what to do:
 5. **Reporting:** After the tests have been run, Jenkins generates a report based on the results. This report includes crucial information such as the number of tests passed/failed, code coverage, and more. I utilize various Jenkins reporting plugins to present these test results in different formats. Here is a report produced from my automated test cases using mochawesome:
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/7eca16ec-1745-4741-b137-c647788a0b60)
 
-6. **Notification:** For notifications I would just need to setup the email notifications in Jenkins using for example:
-Configure Gmail SMTP settings on your email client:
-Gmail SMTP server address: smtp.gmail.com.
-Gmail SMTP name: Your full name.
-Gmail SMTP username: Your Gmail address.
-Gmail SMTP password: Your Gmail's login password.
-Gmail SMTP port (TLS): 587.
-Gmail SMTP port (SSL): 465.
+6. **Notification:** For notifications I would just need to setup the email notifications in Jenkins using for example:  
+Configure Gmail SMTP settings on your email client:    
+Gmail SMTP server address: smtp.gmail.com  
+Gmail SMTP name: Your full name  
+Gmail SMTP username: Your Gmail address   
+Gmail SMTP password: Your Gmail's login password  
+Gmail SMTP port (TLS): 587  
+Gmail SMTP port (SSL): 465  
    
 ## Features
 
