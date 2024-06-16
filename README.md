@@ -16,6 +16,8 @@ The frontend of the application hosted on Heroku can be accessed [here](https://
 The backend of the application hosted on Heroku can be accessed [here](https://note-react-json-db-995df07f909e.herokuapp.com/notes).
 
 ## Project Outline: Automated Testing with Jenkins
+**Cypress Test Cases:** https://github.com/rpotesmangra11/just-do-it-note-test-cases/blob/main/cypress/e2e/note-react-app.cy.js
+
 1. **Jenkins Setup:** As part of my continuous integration/continuous delivery (CI/CD) pipeline, I have set up Jenkins, a powerful automation tool. My Jenkins setup includes jobs specifically configured to run test cases.
 
 3. **Triggering Jenkins Job:** I have leveraged Jenkins' ability to trigger jobs through webhooks. These are HTTP callbacks that send a GET or POST request to a configured URL when a specific event occurs. In my case, this event triggers a Jenkins job. I trigger this using a simple curl command: curl -v -X POST http://localhost:8080/job/just-do-it-note-ci-cd/build --user admin:id
