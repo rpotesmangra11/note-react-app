@@ -83,7 +83,8 @@ This is my JenkinsFile that tells Jenkins what to do:
         }
     }
 
-5. **Reporting:** After the tests have been run, Jenkins generates a report based on the results. This report includes crucial information such as the number of tests passed/failed, code coverage, and more. I utilize various Jenkins reporting plugins to present these test results in different formats.
+5. **Reporting:** After the tests have been run, Jenkins generates a report based on the results. This report includes crucial information such as the number of tests passed/failed, code coverage, and more. I utilize various Jenkins reporting plugins to present these test results in different formats. Here is a report produced from my automated test cases using mochawesome:
+![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/7eca16ec-1745-4741-b137-c647788a0b60)
 
 6. **Notification:** I have also configured Jenkins to send notifications based on the result of the job. For instance, if a test fails, Jenkins sends an email to me or posts a message to my Slack channel, ensuring immediate attention and action.
 ## Features
