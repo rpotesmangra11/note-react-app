@@ -20,7 +20,7 @@ The backend of the application hosted on Heroku can be accessed [here](https://n
 
 3. **Triggering Jenkins Job:** I have leveraged Jenkins' ability to trigger jobs through webhooks. These are HTTP callbacks that send a GET or POST request to a configured URL when a specific event occurs. In my case, this event triggers a Jenkins job. I trigger this using a simple curl command: curl -v -X POST http://localhost:8080/job/just-do-it-note-ci-cd/build --user admin:id
 
-4. **Running Test Cases:** Upon receiving the GET request, Jenkins triggers the job I have configured to run my test cases. This job could be a simple script that runs the tests, or a more complex pipeline with several stages, depending on the needs. In my case I have implemented (as of now) using a Jenkinsfile. This is read from my test case GitHub repo so Jenkins knows what to do. Here is an example run:
+4. **Running Test Cases:** Upon receiving the GET request, Jenkins triggers the job I have configured to run my test cases. This job could be a simple script that runs the tests, or a more complex pipeline with several stages, depending on the needs. In my case, I have implemented (as of now)a pipeline that uses  a Jenkinsfile. This is read from my test case GitHub repo, so Jenkins knows what to do. Here is an example run:
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/927c6c7d-23f9-4d1c-a7f9-350da6a0ec93)
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/25be3073-c531-4798-9576-7ea9b3f4e06f)
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/ba7200e2-e948-47b7-a3cd-73b7f8b78281)
