@@ -98,7 +98,7 @@ Gmail SMTP port (TLS): 587
 Gmail SMTP port (SSL): 465  
 
 ![image](https://github.com/rpotesmangra11/note-react-app/assets/40585885/66c85b35-4754-4cdb-b3f0-177b2cb2d366)
-For the sake of simplicity I have not set this up but wanted to show that if needed where it can be set up.
+The SMTP settings need to be configured here.
 
 ## Features
 
